@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const studentSchema = Schema({
@@ -37,8 +37,8 @@ const studentSchema = Schema({
     },
     isActive : {
         type : Boolean,
-        required : true
+        default : true
     }
-})
+}, {timestamps : true})
 
 module.exports = mongoose.model('Student' , studentSchema)
