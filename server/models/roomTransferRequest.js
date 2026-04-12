@@ -1,31 +1,34 @@
 const mongoose = require('mongoose');
-const { timeStamp } = require('node:console');
-const { ref } = require('node:process');
-
 const { Schema } = mongoose;
 
-const TransferREquestSchema = Schema({
+const TransferRequestSchema = Schema({
     studentId : {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Student',
+        ref: 'User',
         required: true
     },
     currentBedId : {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: Bed,
+        type: Schema.Types.ObjectId,
+        ref: 'Bed',
         required: true
     },
     reason : {
-        type : text,
+        type : String,
         required: true
     },
     status :{
         type : String,
         enum: ['pending' , 'approved' , 'rejected'],
-        required : true
+        default : 'pending'
     },
-    requestedOn : Date,
-    DesiredRoomNo : Number
+    requestedOn : {type : Date , default : Date.now},
+    desiredRoomId : {
+        type : Schema.Types.ObjectId,
+        ref : 'Room',
+        default :  null
+    }
 },{
-    timeStamp: true
+    timestamps: true
 })
+
+module.exports = mongoose.model('TransferRequest' , TransferRequestSchema)

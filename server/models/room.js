@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-const blocks = require('./blocks');
-
 const {Schema} = mongoose;
 
 const roomSchema = Schema({
@@ -8,18 +6,19 @@ const roomSchema = Schema({
        type: Number,
        required : true
     },
-    blockumber : {
-        required: true,
-        type : Number
+    blockId : {
+        type: Schema.Types.ObjectId,
+        ref: 'Block',
+        required: true
     },
     floorNumber : {
         required : true,
         type : Number
     },
-    bedCount : {
+    capacity : {
         type : Number,
-        required : ture
+        required : true
     }
-})
+} , {timestamps : true})
 
 module.exports = mongoose.model('Room' , roomSchema)

@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { timeStamp } = require('node:console');
 const {Schema} = mongoose;
 
 const menuSchema = Schema({
@@ -24,9 +23,9 @@ const menuSchema = Schema({
         required : true,
     },
     weekStartDate : {
-        type : String,
+        type : Date,
         required : true,
     }
-} , { timeStamps: true })
+} , { timestamps: true })
 
 module.exports = mongoose.model('Menu' , menuSchema)

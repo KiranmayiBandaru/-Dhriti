@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-const { type } = require('node:os');
-
 const { Schema } = mongoose;
 
 const UserSchema = new Schema({

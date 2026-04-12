@@ -15,4 +15,12 @@ const authMiddleware = (req, res, next) => {
 
 };
 
-module.exports = { authMiddleware }
+const authorizeRoles = (...roles) => {
+    return (req, res, next) => {
+        if(!roles.includes(req.user.role))
+            return res.status(403).json({message : 'unauthorized'})
+        next()
+    }
+}
+
+module.exports = { authMiddleware , authorizeRoles }
