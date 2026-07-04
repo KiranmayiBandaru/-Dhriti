@@ -5,7 +5,7 @@ const router = express.Router()
 const { addMenu, getMenu } = require('../controllers/menuController')
 const { authMiddleware, authorizeRoles } = require('../middlewares/authMiddleware')
 
-router.post('/addMenu', authMiddleware, authorizeRoles('superadmin'), addMenu)
+router.post('/addMenu', authMiddleware, authorizeRoles('superadmin','admin'), addMenu)
 router.get('/getMenu', getMenu)
 
 module.exports = router
