@@ -7,6 +7,7 @@ const blockRoutes = require('./routes/blockRoute')
 const roomRoutes = require('./routes/roomRoute')
 const bedRoutes = require('./routes/bedRoute')
 const menuRoutes = require('./router/menuRoute')
+const transferRoutes = require('./routes/transferRoutes')
 
 connectDB();
 
@@ -25,6 +26,7 @@ app.use('/api/blocks', blockRoutes)
 app.use('/api/rooms' , roomRoutes)
 app.use('/api/beds' , bedRoutes)
 app.use('/api/menu', menuRoutes)
+app.use('/api/transfer', transferRoutes)
 
 const PORT = process.env.PORT
 app.listen(PORT , ()=>{ 
