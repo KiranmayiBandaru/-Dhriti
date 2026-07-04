@@ -8,6 +8,8 @@ const roomRoutes = require('./routes/roomRoute')
 const bedRoutes = require('./routes/bedRoute')
 const menuRoutes = require('./router/menuRoute')
 const transferRoutes = require('./routes/transferRoutes')
+const removeStudentRoutes = require('./routes/removeStudentRoutes')
+
 
 connectDB();
 
@@ -27,6 +29,7 @@ app.use('/api/rooms' , roomRoutes)
 app.use('/api/beds' , bedRoutes)
 app.use('/api/menu', menuRoutes)
 app.use('/api/transfer', transferRoutes)
+app.use('/api/students', removeStudentRoutes)
 
 const PORT = process.env.PORT
 app.listen(PORT , ()=>{ 
