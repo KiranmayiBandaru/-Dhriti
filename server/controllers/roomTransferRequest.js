@@ -1,5 +1,5 @@
 const StudentProfile = require('../models/student')
-const RoomTransferRequest = require('../models/RoomTransferRequest')
+const RoomTransferRequest = require('../models/roomTransferRequest')
 
 async function requestTransfer(req, res){
     try{

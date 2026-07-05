@@ -1,4 +1,4 @@
-const Block = require('../models/block')
+const Block = require('../models/blocks')
 const roomProfile = require('../models/room')
 
 async function createRoom(req, res){
