@@ -28,4 +28,4 @@ async function getPendingTransfers(req, res){
     }
 }
 
-module.exports = {getPendingTransfers}
+module.exports = { getPendingTransfers }

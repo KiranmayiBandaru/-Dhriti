@@ -29,7 +29,7 @@ async function approveTransfer(req, res) {
     const currentRoomId = currentBed.roomId
 
     // Find available bed
-    let newBed
+    let newBed 
     if (transferReq.desiredRoomId) {
       newBed = await Bed.findOne({ roomId: transferReq.desiredRoomId, isAvailable: true })
     } else {
@@ -57,6 +57,7 @@ async function approveTransfer(req, res) {
     await transferReq.save()
 
     return res.status(200).json({ message: "Transfer approved" })
+    
   } catch (err) {
     return res.status(500).json({ message: err.message })
   }
