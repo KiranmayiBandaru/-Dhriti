@@ -39,4 +39,4 @@ async function getMenu(req, res) {
   }
 }
 
-module.exports = { addMenu , getMenu}
+module.exports = { addMenu , getMenu }

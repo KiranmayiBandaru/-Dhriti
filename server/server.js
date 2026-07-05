@@ -6,9 +6,9 @@ const userRoutes = require('./routes/userRoute')
 const blockRoutes = require('./routes/blockRoute')
 const roomRoutes = require('./routes/roomRoute')
 const bedRoutes = require('./routes/bedRoute')
-const menuRoutes = require('./router/menuRoute')
-const transferRoutes = require('./routes/transferRoutes')
-const removeStudentRoutes = require('./routes/removeStudentRoutes')
+const menuRoutes = require('./routes/menuRoute')
+const transferRoutes = require('./routes/roomTransferRoute')
+const removeStudentRoutes = require('./routes/removeStudent')
 
 
 connectDB();
