@@ -7,7 +7,7 @@ async function approveTransfer(req, res) {
     if (!['admin', 'superadmin'].includes(req.user.role))
       return res.status(403).json({ message: "Not authorized" })
 
-    const { requestId } = req.body
+    const { requestId } = req.params.id
     if (!requestId)
       return res.status(400).json({ message: "requestId required" })
 

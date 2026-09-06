@@ -5,8 +5,8 @@ const { requestTransfer } = require('../controllers/roomTransferRequest')
 const { approveTransfer } = require('../controllers/approveTransferRequest')
 const { getPendingTransfers } = require('../controllers/getPendingTransfers')
 
-router.post('/request', authMiddleware, authorizeRoles('student'), requestTransfer)
-router.post('/approve', authMiddleware, authorizeRoles('admin', 'superadmin'), approveTransfer)
-router.get('/pending', authMiddleware, authorizeRoles('admin', 'superadmin'), getPendingTransfers)
+router.post('/', authMiddleware, authorizeRoles('student'), requestTransfer)
+router.post('/:id', authMiddleware, authorizeRoles('admin', 'superadmin'), approveTransfer)
+router.get('/', authMiddleware, authorizeRoles('admin', 'superadmin'), getPendingTransfers)
 
 module.exports = router

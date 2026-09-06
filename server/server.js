@@ -23,12 +23,12 @@ app.get('/', (req, res)=>{
 
 app.use('/api/auth', authRoutes)
 app.use('/api/users', userRoutes)
-app.use('/api/admin', userRoutes)
+// app.use('/api/admin', userRoutes)
 app.use('/api/blocks', blockRoutes)
 app.use('/api/rooms' , roomRoutes)
 app.use('/api/beds' , bedRoutes)
 app.use('/api/menu', menuRoutes)
-app.use('/api/transfer', transferRoutes)
+app.use('/api/transfer-requests', transferRoutes)
 app.use('/api/students', removeStudentRoutes)
 
 const PORT = process.env.PORT
